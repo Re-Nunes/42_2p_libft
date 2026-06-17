@@ -2,8 +2,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*newStr;
-	unsigned int	len_newStr;
+	char			*newSub;
+	unsigned int	len_newSub;
 	unsigned int	len_s;
 	unsigned int	i;
 
@@ -12,18 +12,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_s = ft_strlen(s);
 	if (start >= len_s)
 		return (ft_strdup(""));
-	len_newStr = len_s - start;
-	if (len_newStr > len)
-		len_newStr = len;
-	newStr = malloc ((len_newStr + 1) * sizeof(char));
-	if (!newStr)
+	len_newSub = len_s - start;
+	if (len_newSub > len)
+		len_newSub = len;
+	newSub = malloc ((len_newSub + 1) * sizeof(char));
+	if (!newSub)
 		return (NULL);
 	i = 0;
-	while (i < len_newStr)
+	while (i < len_newSub)
 	{
-	newStr[i] = s[start + i];
+	newSub[i] = s[start + i];
 		i++;
 	}
-	newStr[i] = '\0';
-	return (newStr);
+	newSub[i] = '\0';
+	return (newSub);
 }
